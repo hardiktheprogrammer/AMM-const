@@ -1,0 +1,78 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "amount",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/IERC20.sol": "IERC20"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/IERC20.sol": {
+			"keccak256": "0x6295bd12613cb9350540029389fd168c8ccf5c15c8b153b2e3ced4ab1355f778",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8a71236f6d5956e54dacbb3bf5ce6e3949e7e2a0128284848c0e14542c5a0529",
+				"dweb:/ipfs/QmS5emmmv7yTTJtCZDUuD3wNUTbdLkS6J6rsiV4Jj4FgD5"
+			]
+		}
+	},
+	"version": 1
+}
