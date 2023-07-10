@@ -32,8 +32,11 @@ contract LUA {
         balanceOf[_from] -= _amount;
         totalSupply -= _amount;
     }
+// update function
+    function _update(uint _reserve0, uint _reserve1) private {
 
-    function 
+
+    }
 
     function swap(address _tokenIn, uint256 _amountIn)
         external
@@ -59,15 +62,60 @@ contract LUA {
         tokenIn.transferFrom(msg.sender, address(this), _amountIn);
 
         uint amountInWithFee = (_amountIn * 1000) / 1003;
-        amountOut = (resrveOut * amountInWithFee) / (reserveIn + amountInWithFee);
+        amountOut = (reserveOut * amountInWithFee) / (reserveIn + amountInWithFee);
         tokenOut.transfer(msg.sender, amountOut);
+        _update( 
+            token0.balanceOf(address(this)),
+            token1.balanceOf(address(this))
+            
+
+
+        );
         // Transfer Token out to msg.sendre
         // update the reserves
 
         // abx / (x  + bx) = ba calcualte ammount of token goes out
+    }   
+
+    function addLiquidity(uint _amount0, uint _amount1) external returns (uint shares)
+     {
+         token0.transferFrom(msg.sender, address(this),_amount0);
+         token1.transferfrom(msg.sender,address(this),_amount1);
+
+         if (reserve0 > 0 || reserve1 > 0) {
+            require(reserve0 * _amount1 == reserve1 * _amount0);
+
+             
+        }
+
+
+    }  
+
+    // mint shares
+    // f(x,y ) = value of liquidity  = sqrt(xy)
+    // s = dx /x * T = dy / y * T
+    // update reserve
+
+    function removeLiquidity(uint _amount0, uint _amount1) external  returns {
+
+        function _sqrt(uint y ) private pure returns (uint z) {
+            if (y > 3) {
+                z = y;
+                uint x = y/ 2 + 1;
+                while (x < z) {
+
+                    z = x;
+                    x = y(y/x+x) / 2;
+                    
+                }
+
+                
+            } else if (y!=0) {
+                z = 1;
+            }
     }
 
-    function addLiquidity() external {}
-
-    function removeLiquidity() external {}
+    function _min(uint x, uint y ) private pure returns(uint) {
+        
+    }
 }
